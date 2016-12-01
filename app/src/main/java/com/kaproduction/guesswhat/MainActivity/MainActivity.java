@@ -174,8 +174,10 @@ public class MainActivity extends AppCompatActivity implements GameMenuFragment.
             displayName = "???";
         } else {
             displayName = p.getDisplayName();
-            gameMenuFragment.setUserName(displayName);
-            gameMenuFragment.setIconUser(p.getIconImageUri());
+            String path = p.getIconImageUrl();
+            gameMenuFragment.setGreeting(displayName);
+            gameMenuFragment.setIconUser(path);
+
         }
 
     }
@@ -232,6 +234,7 @@ public class MainActivity extends AppCompatActivity implements GameMenuFragment.
         mSignInClicked = true;
         mGoogleApiClient.connect();
 
+
     }
 
     @Override
@@ -242,9 +245,10 @@ public class MainActivity extends AppCompatActivity implements GameMenuFragment.
         if (mGoogleApiClient.isConnected()) {
             mGoogleApiClient.disconnect();
         }
-
         gameMenuFragment.setGreeting(getString(R.string.signed_out_greeting));
+        gameMenuFragment.setIconUser(null);
         gameMenuFragment.setShowSignInButton(true);
+
 
     }
 

@@ -4,58 +4,56 @@
     android:layout_height="match_parent"
     android:layout_margin="@dimen/activity_horizontal_margin">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_alignParentTop="true"
-        >
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/textViewUsername"
-            android:text="Hello Unregistered User"
-            android:layout_gravity="center_vertical"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:textColor="@color/lightGreen300"/>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            >
-
-
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:id="@+id/imageViewLogin"
-            android:scaleType="fitXY"
-            android:background="@drawable/ic_action_login"/>
-
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:id="@+id/imageViewLogout"
-            android:scaleType="fitXY"
-            android:background="@drawable/ic_action_logout"/>
-
-        </LinearLayout>
-
-    </LinearLayout>
-
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true">
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
 
         <ImageView
-            android:layout_width="1000dp"
-            android:layout_height="1000dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
             android:id="@+id/imageViewUserIcon"
             android:scaleType="fitXY"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/textViewUsername"
+                android:text="Hello Unregistered User"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/lightGreen300"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+                <ImageButton
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/imageButtonLogin"
+                    android:background="@drawable/ic_action_login"
+                    android:clickable="true"
+                    />
+                <ImageButton
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/imageButtonLogout"
+                    android:background="@drawable/ic_action_logout"
+                    android:clickable="true"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
 
 
 

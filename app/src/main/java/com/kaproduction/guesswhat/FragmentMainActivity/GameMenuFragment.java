@@ -9,10 +9,13 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.kaproduction.guesswhat.Helper.CircleTransform;
 import com.kaproduction.guesswhat.R;
+import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -26,7 +29,8 @@ public class GameMenuFragment extends Fragment implements View.OnClickListener {
     String mGreeting = "Hello...";
     View v;
     boolean mShowSignIn = true;
-    ImageView imageViewLogin,imageViewLogout,imageViewUserIcon;
+    ImageView imageViewUserIcon;
+    ImageButton imageButtonLogin,imageButtonLogout;
     TextView textViewUsername;
 
 
@@ -45,14 +49,11 @@ public class GameMenuFragment extends Fragment implements View.OnClickListener {
         this.mListener = mListener;
     }
 
-    public void setUserName(String name){
-        if (textViewUsername ==null)  return;
-        textViewUsername.setText("Welcome :" + name);
-    }
-
-    public void setIconUser(Uri uri){
+    public void setIconUser(String path){
         if (imageViewUserIcon ==null)  return;
-        imageViewUserIcon.setImageURI(uri);
+        Picasso.with(getActivity().getApplicationContext()).load(path)
+                .transform(new CircleTransform())
+                .into(imageViewUserIcon);
         updateScreen(v);
     }
     public void setGreeting(String greeting) {
@@ -70,16 +71,16 @@ public class GameMenuFragment extends Fragment implements View.OnClickListener {
 
     private void updateScreen(View v) {
         if (getActivity() == null) return;
-        imageViewLogin = (ImageView) v.findViewById(R.id.imageViewLogin);
-        imageViewLogin.setOnClickListener(this);
-        imageViewLogout = (ImageView) v.findViewById(R.id.imageViewLogout);
-        imageViewLogout.setOnClickListener(this);
+        imageButtonLogin = (ImageButton) v.findViewById(R.id.imageButtonLogin);
+        imageButtonLogin.setOnClickListener(this);
+        imageButtonLogout = (ImageButton) v.findViewById(R.id.imageButtonLogout);
+        imageButtonLogout.setOnClickListener(this);
         imageViewUserIcon = (ImageView) v.findViewById(R.id.imageViewUserIcon);
         textViewUsername = (TextView) v.findViewById(R.id.textViewUsername);
         if (textViewUsername != null) textViewUsername.setText(mGreeting);
-        imageViewLogin.setVisibility(mShowSignIn ?
+        imageButtonLogin.setVisibility(mShowSignIn ?
                 View.VISIBLE : View.GONE);
-        imageViewLogout.setVisibility(mShowSignIn ?
+        imageButtonLogout.setVisibility(mShowSignIn ?
                 View.GONE : View.VISIBLE);
 
 
@@ -99,11 +100,11 @@ public class GameMenuFragment extends Fragment implements View.OnClickListener {
     public void onClick(View view) {
 
         switch (view.getId()){
-            case R.id.imageViewLogin:
+            case R.id.imageButtonLogin:
                 mListener.onSignInButtonClicked();
             break;
 
-            case R.id.imageViewLogout:
+            case R.id.imageButtonLogout:
                 mListener.onSignOutButtonClicked();
             break;
 

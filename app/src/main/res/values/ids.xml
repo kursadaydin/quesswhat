@@ -1,2 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+
+    <string name="app_id">879055236525</string>
+
+    <string name="single_play_scoreboard">CgkIrduZ3soZEAIQCw</string>
+    <string name="multi_play_scoreboard">CgkIrduZ3soZEAIQDA</string>
+
+    <string name="achievement_test1">CgkIrduZ3soZEAIQAQ</string>
+    <string name="achievement_test2">CgkIrduZ3soZEAIQAg</string>
+    <string name="achievement_test3">CgkIrduZ3soZEAIQAw</string>
+    <string name="achievement_test4">CgkIrduZ3soZEAIQBA</string>
+    <string name="achievement_test5">CgkIrduZ3soZEAIQBQ</string>
+    <string name="achievement_test6">CgkIrduZ3soZEAIQBg</string>
+    <string name="achievement_test7">CgkIrduZ3soZEAIQBw</string>
+    <string name="achievement_test8">CgkIrduZ3soZEAIQCA</string>
+    <string name="achievement_test9">CgkIrduZ3soZEAIQCQ</string>
+    <string name="achievement_test10">CgkIrduZ3soZEAIQCg</string>
+
+
+
+
+
+
+</resources>
