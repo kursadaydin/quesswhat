@@ -11,7 +11,8 @@
         android:layout_alignParentTop="true"
         android:id="@+id/linearlayout1"
         android:orientation="horizontal"
-        android:layout_marginTop="30dp">
+        android:layout_marginTop="30dp"
+        >
 
         <ImageView
             android:layout_width="match_parent"
@@ -40,17 +41,17 @@
                 android:layout_height="wrap_content"
                 android:gravity="center">
                 <ImageButton
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
                     android:id="@+id/imageButtonLogin"
-                    android:background="@drawable/ic_action_login"
+                    android:background="@drawable/selector_login"
                     android:clickable="true"
                     />
                 <ImageButton
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
                     android:id="@+id/imageButtonLogout"
-                    android:background="@drawable/ic_action_logout"
+                    android:background="@drawable/selector_logout"
                     android:clickable="true"/>
 
             </LinearLayout>
@@ -103,14 +104,14 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:id="@+id/imageButtonAchievement"
-            android:background="@drawable/ic_action_achievement"
+            android:background="@drawable/selector_achivement"
 
             />
         <Button
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:id="@+id/imageButtonLeadership"
-            android:background="@drawable/ic_action_leadership"
+            android:background="@drawable/selector_leadership"
             android:scaleType="fitXY"/>
 
 
