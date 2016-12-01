@@ -2,21 +2,24 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="@dimen/activity_horizontal_margin">
+    android:background="@color/lightGreen50">
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:orientation="horizontal">
+        android:layout_alignParentTop="true"
+        android:id="@+id/linearlayout1"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp">
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="2"
             android:id="@+id/imageViewUserIcon"
-            android:scaleType="fitXY"/>
+            android:scaleType="fitXY"
+            android:layout_marginLeft="30dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -52,8 +55,65 @@
 
             </LinearLayout>
 
-
         </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        android:layout_margin="20dp"
+        >
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/single_player_button"
+            android:text="Single Play"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold"
+            android:layout_margin="10dp"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/single_player_button"
+            android:text="MultiPlay"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold"
+            android:layout_margin="10dp"
+            />
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/imageButtonAchievement"
+            android:background="@drawable/ic_action_achievement"
+
+            />
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/imageButtonLeadership"
+            android:background="@drawable/ic_action_leadership"
+            android:scaleType="fitXY"/>
+
+
 
 
 
