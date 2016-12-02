@@ -71,6 +71,7 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/buttonSinglegame"
             android:background="@drawable/single_player_button"
             android:text="Single Play"
             android:textColor="@color/colorWhite"
@@ -81,6 +82,7 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/buttonMultiplaygame"
             android:background="@drawable/single_player_button"
             android:text="MultiPlay"
             android:textColor="@color/colorWhite"
@@ -100,23 +102,18 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-        <Button
+        <ImageButton
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:id="@+id/imageButtonAchievement"
             android:background="@drawable/selector_achivement"
-
             />
-        <Button
+        <ImageButton
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:id="@+id/imageButtonLeadership"
             android:background="@drawable/selector_leadership"
-            android:scaleType="fitXY"/>
-
-
-
-
+           />
 
     </LinearLayout>
 

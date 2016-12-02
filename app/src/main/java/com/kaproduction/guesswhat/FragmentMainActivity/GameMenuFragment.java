@@ -9,6 +9,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -30,7 +31,8 @@ public class GameMenuFragment extends Fragment implements View.OnClickListener {
     View v;
     boolean mShowSignIn = true;
     ImageView imageViewUserIcon;
-    ImageButton imageButtonLogin,imageButtonLogout;
+    ImageButton imageButtonLogin,imageButtonLogout,imageButtonAchievement,imageButtonLeadership;
+    Button buttonSinglegame, buttonMultiplaygame;
     TextView textViewUsername;
 
 
@@ -76,6 +78,17 @@ public class GameMenuFragment extends Fragment implements View.OnClickListener {
         imageButtonLogout = (ImageButton) v.findViewById(R.id.imageButtonLogout);
         imageButtonLogout.setOnClickListener(this);
         imageViewUserIcon = (ImageView) v.findViewById(R.id.imageViewUserIcon);
+        imageButtonAchievement = (ImageButton) v.findViewById(R.id.imageButtonAchievement);
+        imageButtonAchievement.setOnClickListener(this);
+        imageButtonLeadership = (ImageButton) v.findViewById(R.id.imageButtonLeadership);
+        imageButtonLeadership.setOnClickListener(this);
+
+        buttonSinglegame = (Button) v.findViewById(R.id.buttonSinglegame);
+        buttonSinglegame.setOnClickListener(this);
+        buttonMultiplaygame = (Button) v.findViewById(R.id.buttonMultiplaygame);
+        buttonMultiplaygame.setOnClickListener(this);
+
+
         textViewUsername = (TextView) v.findViewById(R.id.textViewUsername);
         if (textViewUsername != null) textViewUsername.setText(mGreeting);
         imageButtonLogin.setVisibility(mShowSignIn ?
@@ -108,6 +121,20 @@ public class GameMenuFragment extends Fragment implements View.OnClickListener {
                 mListener.onSignOutButtonClicked();
             break;
 
+            case R.id.imageButtonAchievement:
+                mListener.onShowAchievementsRequested();
+                break;
+            case R.id.imageButtonLeadership:
+                mListener.onShowLeaderboardsRequested();
+                break;
+
+            case R.id.buttonSinglegame:
+                mListener.onStartSingleGameRequested();
+                break;
+
+            case R.id.buttonMultiplaygame:
+                mListener.onStartMultiPlayGameRequest();
+                break;
 
         }
 

@@ -22,7 +22,9 @@ import com.google.example.games.basegameutils.BaseGameUtils;
 import com.kaproduction.guesswhat.FragmentMainActivity.GameMenuFragment;
 import com.kaproduction.guesswhat.FragmentMainActivity.LoseFragment;
 import com.kaproduction.guesswhat.FragmentMainActivity.WinFragment;
+import com.kaproduction.guesswhat.MultiPlayGame.MultiPlayGameActivity;
 import com.kaproduction.guesswhat.R;
+import com.kaproduction.guesswhat.SingleGame.SingleGameActivity;
 
 import static android.R.string.no;
 import static android.R.string.yes;
@@ -211,20 +213,38 @@ public class MainActivity extends AppCompatActivity implements GameMenuFragment.
     @Override
     public void onStartSingleGameRequested() {
 
+        Intent i = new Intent(MainActivity.this, SingleGameActivity.class);
+        startActivity(i);
+
     }
 
     @Override
     public void onStartMultiPlayGameRequest() {
 
+        Intent i = new Intent(MainActivity.this, MultiPlayGameActivity.class);
+        startActivity(i);
+
     }
 
     @Override
     public void onShowAchievementsRequested() {
+        if (isSignedIn()) {
+            startActivityForResult(Games.Achievements.getAchievementsIntent(mGoogleApiClient),
+                    RC_UNUSED);
+        } else {
+            BaseGameUtils.makeSimpleDialog(this, getString(R.string.achievements_not_available)).show();
+        }
 
     }
 
     @Override
     public void onShowLeaderboardsRequested() {
+        if (isSignedIn()) {
+            startActivityForResult(Games.Leaderboards.getAllLeaderboardsIntent(mGoogleApiClient),
+                    RC_UNUSED);
+        } else {
+            BaseGameUtils.makeSimpleDialog(this, getString(R.string.leaderboards_not_available)).show();
+        }
 
     }
 

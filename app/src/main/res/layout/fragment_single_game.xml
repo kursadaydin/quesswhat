@@ -1,11 +1,559 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Your are in Single Game Fragment"/>
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:background="@color/lightGreen100">
 
-</LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/linearlayoutHeader">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/number_to_find_is"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                android:textStyle="normal|bold"
+                android:textSize="24sp"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/singleplayerHeader"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                android:textStyle="normal|bold"
+                android:textSize="24sp"
+                android:gravity="center"
+                />
+
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/linearlayoutHeader"
+            android:layout_above="@+id/singlePlayerButton">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:orientation="vertical"
+
+                android:layout_below="@+id/singleplayerTextViewDeneme1Sonuc">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/singleplayerLinearLayout1"
+                    android:orientation="horizontal"
+                    android:background="@color/lightGreen50"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/singleplayerTextViewDeneme1"
+                        android:layout_weight="1"
+                        android:paddingLeft="5dp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                        android:textStyle="normal|bold"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="20sp"
+                        android:gravity="left"
+                        android:text="@string/test_1"/>
+
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/singleplayerEditText1"
+                        android:layout_weight="4"
+                        android:imeOptions="actionDone"
+                        android:inputType="number"
+                        android:maxLength="4"
+                        android:layout_gravity="left"
+                        android:textColor="@color/colorBlack"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/singleplayerTextViewDeneme1Sonuc"
+                        android:layout_weight="4"
+                        android:textStyle="normal|bold"
+                        android:textSize="24sp"
+                        android:layout_gravity="bottom|right"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/singleplayerLinearLayout2"
+                    android:layout_below="@+id/singleplayerTextViewDeneme1Sonuc"
+                    android:orientation="horizontal"
+                    android:background="@color/lightGreen100"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/singleplayerTextViewDeneme2"
+                        android:layout_weight="1"
+                        android:paddingLeft="5dp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                        android:textStyle="normal|bold"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="20sp"
+                        android:gravity="left"
+                        android:text="@string/test_2"/>
+
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/singleplayerEditText2"
+                        android:layout_weight="4"
+                        android:imeOptions="actionDone"
+                        android:inputType="number"
+                        android:maxLength="4"
+                        android:layout_gravity="left"
+                        android:textColor="@color/colorBlack"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/singleplayerTextViewDeneme2Sonuc"
+                        android:layout_weight="4"
+                        android:textStyle="normal|bold"
+                        android:textSize="24sp"
+                        android:layout_gravity="bottom|right"
+                        />
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/singleplayerLinearLayout3"
+                    android:layout_below="@+id/singleplayerLinearLayout2"
+                    android:orientation="horizontal"
+                    android:background="@color/lightGreen200"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/singleplayerTextViewDeneme3"
+                        android:layout_weight="1"
+                        android:paddingLeft="5dp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                        android:textStyle="normal|bold"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="20sp"
+                        android:gravity="left"
+                        android:text="@string/test_3"/>
+
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/singleplayerEditText3"
+                        android:layout_weight="4"
+                        android:imeOptions="actionDone"
+                        android:inputType="number"
+                        android:maxLength="4"
+                        android:layout_gravity="left"
+                        android:textColor="@color/colorBlack"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/singleplayerTextViewDeneme3Sonuc"
+                        android:layout_weight="4"
+                        android:textStyle="normal|bold"
+                        android:textSize="24sp"
+                        android:layout_gravity="bottom|right"
+                        />
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/singleplayerLinearLayout4"
+                    android:layout_below="@+id/singleplayerLinearLayout3"
+                    android:orientation="horizontal"
+                    android:background="@color/lightGreen300"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/singleplayerTextViewDeneme4"
+                        android:layout_weight="1"
+                        android:paddingLeft="5dp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                        android:textStyle="normal|bold"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="20sp"
+                        android:gravity="left"
+                        android:text="@string/test_4"/>
+
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/singleplayerEditText4"
+                        android:layout_weight="4"
+                        android:imeOptions="actionDone"
+                        android:inputType="number"
+                        android:maxLength="4"
+                        android:layout_gravity="left"
+                        android:textColor="@color/colorBlack"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/singleplayerTextViewDeneme4Sonuc"
+                        android:layout_weight="4"
+                        android:textStyle="normal|bold"
+                        android:textSize="24sp"
+                        android:layout_gravity="bottom|right"
+                        />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/singleplayerLinearLayout5"
+                    android:layout_below="@+id/singleplayerLinearLayout4"
+                    android:orientation="horizontal"
+                    android:background="@color/lightGreen400"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/singleplayerTextViewDeneme5"
+                        android:layout_weight="1"
+                        android:paddingLeft="5dp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                        android:textStyle="normal|bold"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="20sp"
+                        android:gravity="left"
+                        android:text="@string/test_5"/>
+
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/singleplayerEditText5"
+                        android:layout_weight="4"
+                        android:imeOptions="actionDone"
+                        android:inputType="number"
+                        android:maxLength="4"
+                        android:layout_gravity="left"
+                        android:textColor="@color/colorBlack"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/singleplayerTextViewDeneme5Sonuc"
+                        android:layout_weight="4"
+                        android:textStyle="normal|bold"
+                        android:textSize="24sp"
+                        android:layout_gravity="bottom|right"
+                        />
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/singleplayerLinearLayout6"
+                    android:layout_below="@+id/singleplayerLinearLayout5"
+                    android:orientation="horizontal"
+                    android:background="@color/lightGreen500"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/singleplayerTextViewDeneme6"
+                        android:layout_weight="1"
+                        android:paddingLeft="5dp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                        android:textStyle="normal|bold"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="20sp"
+                        android:gravity="left"
+                        android:text="@string/test_6"/>
+
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/singleplayerEditText6"
+                        android:layout_weight="4"
+                        android:imeOptions="actionDone"
+                        android:inputType="number"
+                        android:maxLength="4"
+                        android:layout_gravity="left"
+                        android:textColor="@color/colorBlack"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/singleplayerTextViewDeneme6Sonuc"
+                        android:layout_weight="4"
+                        android:textStyle="normal|bold"
+                        android:textSize="24sp"
+                        android:layout_gravity="bottom|right"
+                        />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/singleplayerLinearLayout7"
+                    android:layout_below="@+id/singleplayerLinearLayout6"
+                    android:orientation="horizontal"
+                    android:background="@color/lightGreen600"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/singleplayerTextViewDeneme7"
+                        android:layout_weight="1"
+                        android:paddingLeft="5dp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                        android:textStyle="normal|bold"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="20sp"
+                        android:gravity="left"
+                        android:text="@string/test_7"/>
+
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/singleplayerEditText7"
+                        android:layout_weight="4"
+                        android:imeOptions="actionDone"
+                        android:inputType="number"
+                        android:maxLength="4"
+                        android:layout_gravity="left"
+                        android:textColor="@color/colorBlack"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/singleplayerTextViewDeneme7Sonuc"
+                        android:layout_weight="4"
+                        android:textStyle="normal|bold"
+                        android:textSize="24sp"
+                        android:layout_gravity="bottom|right"
+                        />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/singleplayerLinearLayout8"
+                    android:layout_below="@+id/singleplayerLinearLayout7"
+                    android:orientation="horizontal"
+                    android:background="@color/lightGreen700"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/singleplayerTextViewDeneme8"
+                        android:layout_weight="1"
+                        android:paddingLeft="5dp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                        android:textStyle="normal|bold"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="20sp"
+                        android:gravity="left"
+                        android:text="@string/test_8"/>
+
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/singleplayerEditText8"
+                        android:layout_weight="4"
+                        android:imeOptions="actionDone"
+                        android:inputType="number"
+                        android:maxLength="4"
+                        android:layout_gravity="left"
+                        android:textColor="@color/colorBlack"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/singleplayerTextViewDeneme8Sonuc"
+                        android:layout_weight="4"
+                        android:textStyle="normal|bold"
+                        android:textSize="24sp"
+                        android:layout_gravity="bottom|right"
+                        />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/singleplayerLinearLayout9"
+                    android:layout_below="@+id/singleplayerLinearLayout8"
+                    android:orientation="horizontal"
+                    android:background="@color/lightGreen800"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/singleplayerTextViewDeneme9"
+                        android:layout_weight="1"
+                        android:paddingLeft="5dp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                        android:textStyle="normal|bold"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="20sp"
+                        android:gravity="left"
+                        android:text="@string/test_9"/>
+
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/singleplayerEditText9"
+                        android:layout_weight="4"
+                        android:imeOptions="actionDone"
+                        android:inputType="number"
+                        android:maxLength="4"
+                        android:layout_gravity="left"
+                        android:textColor="@color/colorBlack"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/singleplayerTextViewDeneme9Sonuc"
+                        android:layout_weight="4"
+                        android:textStyle="normal|bold"
+                        android:textSize="24sp"
+                        android:layout_gravity="bottom|right"
+                        />
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/singleplayerLinearLayout10"
+                    android:layout_below="@+id/singleplayerLinearLayout9"
+                    android:orientation="horizontal"
+                    android:background="@color/lightGreen800"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/singleplayerTextViewDeneme10"
+                        android:layout_weight="1"
+                        android:paddingLeft="5dp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                        android:textStyle="normal|bold"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="20sp"
+                        android:gravity="left"
+                        android:text="@string/test_10"/>
+
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/singleplayerEditText10"
+                        android:layout_weight="4"
+                        android:imeOptions="actionDone"
+                        android:inputType="number"
+                        android:maxLength="4"
+                        android:layout_gravity="left"
+                        android:textColor="@color/colorBlack"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/singleplayerTextViewDeneme10Sonuc"
+                        android:layout_weight="4"
+                        android:textStyle="normal|bold"
+                        android:textSize="24sp"
+                        android:layout_gravity="bottom|right"
+                        />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Check My Number"
+            android:id="@+id/singlePlayerButton"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/single_player_button"
+            android:textColor="@color/colorWhite"
+            android:layout_alignParentBottom="true"/>
+
+
+    </RelativeLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:clickable="true"
+        android:src="@drawable/ic_action_helper"
+        app:layout_anchor="@id/linearlayoutHeader"
+        app:layout_anchorGravity="bottom|right|end"
+
+        />
+
+</android.support.design.widget.CoordinatorLayout>

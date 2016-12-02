@@ -27,7 +27,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SingleGame.SingleGameActivity" />
+        <activity
+            android:name=".SingleGame.SingleGameActivity"
+            android:label="@string/title_activity_single_play_game"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"/>
+
         <activity
             android:name=".MultiPlayGame.MultiPlayGameActivity"
             android:label="@string/title_activity_multi_play_game"
