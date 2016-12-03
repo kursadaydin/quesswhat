@@ -29,7 +29,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/singleplayerHeader"
+                android:id="@+id/spHeader"
                 android:textAppearance="@style/TextAppearance.AppCompat.Caption"
                 android:textStyle="normal|bold"
                 android:textSize="24sp"
@@ -51,12 +51,12 @@
                 android:layout_marginRight="15dp"
                 android:orientation="vertical"
 
-                android:layout_below="@+id/singleplayerTextViewDeneme1Sonuc">
+                android:layout_below="@+id/spTextViewDeneme1Sonuc">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/singleplayerLinearLayout1"
+                    android:id="@+id/spLinearLayout1"
                     android:orientation="horizontal"
                     android:background="@color/lightGreen50"
                     >
@@ -64,7 +64,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/singleplayerTextViewDeneme1"
+                        android:id="@+id/spTextViewDeneme1"
                         android:layout_weight="1"
                         android:paddingLeft="5dp"
                         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
@@ -77,7 +77,7 @@
                     <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/singleplayerEditText1"
+                        android:id="@+id/spEditText1"
                         android:layout_weight="4"
                         android:imeOptions="actionDone"
                         android:inputType="number"
@@ -89,7 +89,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/singleplayerTextViewDeneme1Sonuc"
+                        android:id="@+id/spTextViewDeneme1Sonuc"
                         android:layout_weight="4"
                         android:textStyle="normal|bold"
                         android:textSize="24sp"
@@ -100,8 +100,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/singleplayerLinearLayout2"
-                    android:layout_below="@+id/singleplayerTextViewDeneme1Sonuc"
+                    android:id="@+id/spLinearLayout2"
+                    android:layout_below="@+id/spTextViewDeneme1Sonuc"
                     android:orientation="horizontal"
                     android:background="@color/lightGreen100"
                     >
@@ -109,7 +109,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/singleplayerTextViewDeneme2"
+                        android:id="@+id/spTextViewDeneme2"
                         android:layout_weight="1"
                         android:paddingLeft="5dp"
                         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
@@ -122,7 +122,7 @@
                     <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/singleplayerEditText2"
+                        android:id="@+id/spEditText2"
                         android:layout_weight="4"
                         android:imeOptions="actionDone"
                         android:inputType="number"
@@ -134,7 +134,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/singleplayerTextViewDeneme2Sonuc"
+                        android:id="@+id/spTextViewDeneme2Sonuc"
                         android:layout_weight="4"
                         android:textStyle="normal|bold"
                         android:textSize="24sp"
@@ -148,8 +148,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/singleplayerLinearLayout3"
-                    android:layout_below="@+id/singleplayerLinearLayout2"
+                    android:id="@+id/spLinearLayout3"
+                    android:layout_below="@+id/spLinearLayout2"
                     android:orientation="horizontal"
                     android:background="@color/lightGreen200"
                     >
@@ -157,7 +157,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/singleplayerTextViewDeneme3"
+                        android:id="@+id/spTextViewDeneme3"
                         android:layout_weight="1"
                         android:paddingLeft="5dp"
                         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
@@ -170,7 +170,7 @@
                     <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/singleplayerEditText3"
+                        android:id="@+id/spEditText3"
                         android:layout_weight="4"
                         android:imeOptions="actionDone"
                         android:inputType="number"
@@ -182,7 +182,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/singleplayerTextViewDeneme3Sonuc"
+                        android:id="@+id/spTextViewDeneme3Sonuc"
                         android:layout_weight="4"
                         android:textStyle="normal|bold"
                         android:textSize="24sp"
@@ -196,8 +196,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/singleplayerLinearLayout4"
-                    android:layout_below="@+id/singleplayerLinearLayout3"
+                    android:id="@+id/spLinearLayout4"
+                    android:layout_below="@+id/spLinearLayout3"
                     android:orientation="horizontal"
                     android:background="@color/lightGreen300"
                     >
@@ -205,7 +205,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/singleplayerTextViewDeneme4"
+                        android:id="@+id/spTextViewDeneme4"
                         android:layout_weight="1"
                         android:paddingLeft="5dp"
                         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
@@ -218,7 +218,7 @@
                     <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/singleplayerEditText4"
+                        android:id="@+id/spEditText4"
                         android:layout_weight="4"
                         android:imeOptions="actionDone"
                         android:inputType="number"
@@ -230,7 +230,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/singleplayerTextViewDeneme4Sonuc"
+                        android:id="@+id/spTextViewDeneme4Sonuc"
                         android:layout_weight="4"
                         android:textStyle="normal|bold"
                         android:textSize="24sp"
@@ -243,8 +243,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/singleplayerLinearLayout5"
-                    android:layout_below="@+id/singleplayerLinearLayout4"
+                    android:id="@+id/spLinearLayout5"
+                    android:layout_below="@+id/spLinearLayout4"
                     android:orientation="horizontal"
                     android:background="@color/lightGreen400"
                     >
@@ -252,7 +252,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/singleplayerTextViewDeneme5"
+                        android:id="@+id/spTextViewDeneme5"
                         android:layout_weight="1"
                         android:paddingLeft="5dp"
                         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
@@ -265,7 +265,7 @@
                     <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/singleplayerEditText5"
+                        android:id="@+id/spEditText5"
                         android:layout_weight="4"
                         android:imeOptions="actionDone"
                         android:inputType="number"
@@ -277,7 +277,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/singleplayerTextViewDeneme5Sonuc"
+                        android:id="@+id/spTextViewDeneme5Sonuc"
                         android:layout_weight="4"
                         android:textStyle="normal|bold"
                         android:textSize="24sp"
@@ -291,8 +291,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/singleplayerLinearLayout6"
-                    android:layout_below="@+id/singleplayerLinearLayout5"
+                    android:id="@+id/spLinearLayout6"
+                    android:layout_below="@+id/spLinearLayout5"
                     android:orientation="horizontal"
                     android:background="@color/lightGreen500"
                     >
@@ -300,7 +300,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/singleplayerTextViewDeneme6"
+                        android:id="@+id/spTextViewDeneme6"
                         android:layout_weight="1"
                         android:paddingLeft="5dp"
                         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
@@ -313,7 +313,7 @@
                     <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/singleplayerEditText6"
+                        android:id="@+id/spEditText6"
                         android:layout_weight="4"
                         android:imeOptions="actionDone"
                         android:inputType="number"
@@ -325,7 +325,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/singleplayerTextViewDeneme6Sonuc"
+                        android:id="@+id/spTextViewDeneme6Sonuc"
                         android:layout_weight="4"
                         android:textStyle="normal|bold"
                         android:textSize="24sp"
@@ -338,8 +338,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/singleplayerLinearLayout7"
-                    android:layout_below="@+id/singleplayerLinearLayout6"
+                    android:id="@+id/spLinearLayout7"
+                    android:layout_below="@+id/spLinearLayout6"
                     android:orientation="horizontal"
                     android:background="@color/lightGreen600"
                     >
@@ -347,7 +347,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/singleplayerTextViewDeneme7"
+                        android:id="@+id/spTextViewDeneme7"
                         android:layout_weight="1"
                         android:paddingLeft="5dp"
                         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
@@ -360,7 +360,7 @@
                     <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/singleplayerEditText7"
+                        android:id="@+id/spEditText7"
                         android:layout_weight="4"
                         android:imeOptions="actionDone"
                         android:inputType="number"
@@ -372,7 +372,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/singleplayerTextViewDeneme7Sonuc"
+                        android:id="@+id/spTextViewDeneme7Sonuc"
                         android:layout_weight="4"
                         android:textStyle="normal|bold"
                         android:textSize="24sp"
@@ -385,8 +385,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/singleplayerLinearLayout8"
-                    android:layout_below="@+id/singleplayerLinearLayout7"
+                    android:id="@+id/spLinearLayout8"
+                    android:layout_below="@+id/spLinearLayout7"
                     android:orientation="horizontal"
                     android:background="@color/lightGreen700"
                     >
@@ -394,7 +394,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/singleplayerTextViewDeneme8"
+                        android:id="@+id/spTextViewDeneme8"
                         android:layout_weight="1"
                         android:paddingLeft="5dp"
                         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
@@ -407,7 +407,7 @@
                     <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/singleplayerEditText8"
+                        android:id="@+id/spEditText8"
                         android:layout_weight="4"
                         android:imeOptions="actionDone"
                         android:inputType="number"
@@ -419,7 +419,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/singleplayerTextViewDeneme8Sonuc"
+                        android:id="@+id/spTextViewDeneme8Sonuc"
                         android:layout_weight="4"
                         android:textStyle="normal|bold"
                         android:textSize="24sp"
@@ -432,8 +432,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/singleplayerLinearLayout9"
-                    android:layout_below="@+id/singleplayerLinearLayout8"
+                    android:id="@+id/spLinearLayout9"
+                    android:layout_below="@+id/spLinearLayout8"
                     android:orientation="horizontal"
                     android:background="@color/lightGreen800"
                     >
@@ -441,7 +441,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/singleplayerTextViewDeneme9"
+                        android:id="@+id/spTextViewDeneme9"
                         android:layout_weight="1"
                         android:paddingLeft="5dp"
                         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
@@ -454,7 +454,7 @@
                     <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/singleplayerEditText9"
+                        android:id="@+id/spEditText9"
                         android:layout_weight="4"
                         android:imeOptions="actionDone"
                         android:inputType="number"
@@ -466,7 +466,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/singleplayerTextViewDeneme9Sonuc"
+                        android:id="@+id/spTextViewDeneme9Sonuc"
                         android:layout_weight="4"
                         android:textStyle="normal|bold"
                         android:textSize="24sp"
@@ -480,8 +480,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/singleplayerLinearLayout10"
-                    android:layout_below="@+id/singleplayerLinearLayout9"
+                    android:id="@+id/spLinearLayout10"
+                    android:layout_below="@+id/spLinearLayout9"
                     android:orientation="horizontal"
                     android:background="@color/lightGreen800"
                     >
@@ -489,7 +489,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/singleplayerTextViewDeneme10"
+                        android:id="@+id/spTextViewDeneme10"
                         android:layout_weight="1"
                         android:paddingLeft="5dp"
                         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
@@ -502,7 +502,7 @@
                     <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/singleplayerEditText10"
+                        android:id="@+id/spEditText10"
                         android:layout_weight="4"
                         android:imeOptions="actionDone"
                         android:inputType="number"
@@ -514,7 +514,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/singleplayerTextViewDeneme10Sonuc"
+                        android:id="@+id/spTextViewDeneme10Sonuc"
                         android:layout_weight="4"
                         android:textStyle="normal|bold"
                         android:textSize="24sp"

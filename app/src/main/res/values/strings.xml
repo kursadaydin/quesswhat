@@ -35,5 +35,8 @@
     <string name="test_9">9 :</string>
     <string name="test_10">10 :</string>
 
+    <string name="your_progress_will_be_uploaded">Your existing achievements and score will be uploaded shortly.</string>
+    <string name="singlePlay_explanation">You play in Single Mode... Why dont you play in Multiplayer</string>
+
 
 </resources>

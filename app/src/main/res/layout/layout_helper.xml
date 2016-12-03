@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/mainContainer"
+        android:orientation="vertical"
+        android:layout_margin="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/llhelper1"
+        android:gravity="center">
+
+        <ToggleButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/toggleButton1"
+
+            android:textOn=" "
+            android:textOff=" "
+            android:background="@drawable/ic_action_number_1_idle"/>
+        <ToggleButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/toggleButton2"
+            android:textOn=" "
+            android:textOff=" "
+            android:background="@drawable/ic_action_number_2_idle"/>
+        <ToggleButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/toggleButton3"
+            android:textOn=" "
+            android:textOff=" "
+            android:background="@drawable/ic_action_number_3_idle"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/llhelper2"
+        android:layout_below="@+id/llhelper1"
+        android:gravity="center">
+
+
+        <ToggleButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/toggleButton4"
+            android:textOn=" "
+            android:textOff=" "
+            android:background="@drawable/ic_action_number_4_idle"/>
+        <ToggleButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/toggleButton5"
+            android:textOn=" "
+            android:textOff=" "
+            android:background="@drawable/ic_action_number_5_idle"/>
+        <ToggleButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/toggleButton6"
+            android:textOn=" "
+            android:textOff=" "
+            android:background="@drawable/ic_action_number_6_idle"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/llhelper3"
+        android:layout_below="@+id/llhelper2"
+        android:gravity="center">
+
+        <ToggleButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/toggleButton7"
+            android:textOn=" "
+            android:textOff=" "
+            android:background="@drawable/ic_action_number_7_idle"/>
+        <ToggleButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/toggleButton8"
+            android:textOn=" "
+            android:textOff=" "
+            android:background="@drawable/ic_action_number_8_idle"/>
+        <ToggleButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/toggleButton9"
+            android:textOn=" "
+            android:textOff=" "
+            android:background="@drawable/ic_action_number_9_idle"/>
+
+
+    </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/llhelper4"
+            android:layout_below="@+id/llhelper3"
+            android:gravity="center">
+
+            <ToggleButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/toggleButton0"
+                android:textOn=" "
+                android:textOff=" "
+                android:background="@drawable/ic_action_number_0_idle"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/llhelper5"
+            android:layout_below="@+id/llhelper4"
+            android:gravity="center">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/buttonnOK"
+                android:text="OK"
+
+                />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/buttonnClear"
+                android:text="Clear All"
+
+                />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</RelativeLayout>
