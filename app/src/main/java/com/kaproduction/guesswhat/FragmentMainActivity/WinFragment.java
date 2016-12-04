@@ -22,7 +22,7 @@ public class WinFragment extends Fragment implements View.OnClickListener {
     float mScore = 0;
     boolean mShowSignIn = false;
 
-    Button buttonWinFragment,buttonWinFragmentLogin,buttonWinFragmentLogout;
+    Button buttonWinFragment,buttonWinFragmentLogin;
     TextView textViewWinFragmentScore,textViewWinFragmentText;
 
 
@@ -54,19 +54,28 @@ public class WinFragment extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
        v = inflater.inflate(R.layout.fragment_win, container, false);
-        updateUI();
-        return v;
-    }
-
-    private void updateUI() {
-        if (getActivity() == null) return;
         buttonWinFragment = (Button) v.findViewById(R.id.buttonWinFragment);
         buttonWinFragmentLogin = (Button) v.findViewById(R.id.buttonWinFragmentLogin);
         textViewWinFragmentScore = (TextView) v.findViewById(R.id.textViewWinFragmentScore);
         textViewWinFragmentText = (TextView) v.findViewById(R.id.textViewWinFragmentText);
-
         buttonWinFragment.setOnClickListener(this);
         buttonWinFragmentLogin.setOnClickListener(this);
+        return v;
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        updateUI();
+    }
+
+    private void updateUI() {
+        if (getActivity() == null) return;
+
+
+        buttonWinFragmentLogin.setVisibility(
+                mShowSignIn ? View.VISIBLE : View.GONE);
+
     }
 
     @Override

@@ -4,7 +4,6 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -30,15 +29,15 @@ import com.kaproduction.guesswhat.R;
 import com.kaproduction.guesswhat.SingleGame.SingleGameActivity;
 import com.kaproduction.guesswhat.SingleGame.SingleGameFragment;
 
+
 import static android.R.string.no;
 import static android.R.string.yes;
 
-public class MainActivity extends AppCompatActivity implements GameMenuFragment.Listener, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, SingleGameFragment.Listener, WinFragment.Listener {
+public class MainActivity extends AppCompatActivity implements GameMenuFragment.Listener, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener,  WinFragment.Listener, LoseFragment.Listener, SingleGameFragment.Listener {
     // Fragments
     GameMenuFragment gameMenuFragment;
     LoseFragment loseFragment;
     WinFragment winFragment;
-
     SingleGameFragment singleGameFragment;
 
     // Client used to interact with Google APIs
@@ -99,17 +98,14 @@ public class MainActivity extends AppCompatActivity implements GameMenuFragment.
 
 
         gameMenuFragment = new GameMenuFragment();
-        loseFragment = new LoseFragment();
-        winFragment = new WinFragment();
-
         singleGameFragment = new SingleGameFragment();
+        winFragment = new WinFragment();
+        loseFragment = new LoseFragment();
 
         gameMenuFragment.setListener(this);
         singleGameFragment.setListener(this);
         winFragment.setListener(this);
-
-
-
+        loseFragment.setListener(this);
 
         // add initial fragment (welcome fragment)
         getSupportFragmentManager().beginTransaction().add(R.id.fragment_holder,
@@ -195,24 +191,25 @@ public class MainActivity extends AppCompatActivity implements GameMenuFragment.
     public void onConnected(@Nullable Bundle bundle) {
         // Show sign-out button on main menu
         gameMenuFragment.setShowSignInButton(false);
-
-        // Show "you are signed in" message on win screen, with no sign in button.
         winFragment.setShowSignInButton(false);
+        loseFragment.setShowSignInButton(false);
 
         // Show "you are signed in" message on win screen, with no sign in button.
         // loseFragment.setShowSignInButton(false);
         // Set the greeting appropriately on main menu
         Player p = Games.Players.getCurrentPlayer(mGoogleApiClient);
         String displayName;
+        String path = null;
         if (p == null) {
             displayName = "???";
         } else {
             displayName = p.getDisplayName();
-            String path = p.getIconImageUrl();
-            gameMenuFragment.setGreeting(displayName);
-            gameMenuFragment.setIconUser(path);
+            path = p.getIconImageUrl();
+           
 
         }
+        gameMenuFragment.setGreeting(displayName);
+        gameMenuFragment.setIconUser(path);
 
         // if we have accomplishments to push, push them
         if (!mOutbox.isEmpty()) {
@@ -247,13 +244,13 @@ public class MainActivity extends AppCompatActivity implements GameMenuFragment.
 
         gameMenuFragment.setShowSignInButton(true);
         winFragment.setShowSignInButton(true);
+        loseFragment.setShowSignInButton(true);
     }
 
     @Override
     public void onStartSingleGameRequested() {
 
-        Intent i = new Intent(MainActivity.this, SingleGameActivity.class);
-        startActivity(i);
+        switchToFragment(singleGameFragment);
 
     }
 
@@ -294,6 +291,10 @@ public class MainActivity extends AppCompatActivity implements GameMenuFragment.
         mGoogleApiClient.connect();
 
 
+        winFragment.setShowSignInButton(false);
+        loseFragment.setShowSignInButton(false);
+
+
     }
 
     @Override
@@ -309,6 +310,7 @@ public class MainActivity extends AppCompatActivity implements GameMenuFragment.
         gameMenuFragment.setShowSignInButton(true);
 
         winFragment.setShowSignInButton(true);
+        loseFragment.setShowSignInButton(true);
 
 
     }
@@ -334,7 +336,18 @@ public class MainActivity extends AppCompatActivity implements GameMenuFragment.
 
     }
 
-    void switchToFragment(Fragment newFrag) {
+    @Override
+    public void onSinglePlayFailed(int target) {
+        //target tahmin etmeye calistigimiz sayi....
+        String message = "Our target was "+ target+ " but you didnt succeed....";
+        loseFragment.setExplanation(message);
+        switchToFragment(loseFragment);
+
+
+
+    }
+
+   public void switchToFragment(Fragment newFrag) {
         getSupportFragmentManager()
                 .beginTransaction().replace(R.id.fragment_holder, newFrag)
                 .commit();
@@ -342,7 +355,7 @@ public class MainActivity extends AppCompatActivity implements GameMenuFragment.
 
     }
 
-    void checkForAchievements(float requestedScore, int count) {
+   public void checkForAchievements(float requestedScore, int count) {
         // Check if each condition is met; if so, unlock the corresponding
         // achievement.
         switch (count){
@@ -392,7 +405,7 @@ public class MainActivity extends AppCompatActivity implements GameMenuFragment.
 
     }
 
-        void achievementToast(String achievement) {
+       public void achievementToast(String achievement) {
             // Only show toast if not signed in. If signed in, the standard Google Play
             // toasts will appear, so we don't need to show our own.
             if (!isSignedIn()) {
@@ -402,7 +415,7 @@ public class MainActivity extends AppCompatActivity implements GameMenuFragment.
 
         }
 
-    void pushAccomplishments() {
+    public void pushAccomplishments() {
 
         if (!isSignedIn()) {
             // can't push to the cloud, so save locally
@@ -503,6 +516,18 @@ public class MainActivity extends AppCompatActivity implements GameMenuFragment.
         mSignInClicked = true;
         mGoogleApiClient.connect();
 
+    }
+
+    @Override
+    public void onLoseScreenDismissed() {
+        switchToFragment(gameMenuFragment);
+    }
+
+    @Override
+    public void onLoseScreenSignInClicked() {
+
+        mSignInClicked = true;
+        mGoogleApiClient.connect();
     }
 
     class AccomplishmentsOutbox {

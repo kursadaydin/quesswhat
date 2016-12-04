@@ -31,14 +31,20 @@
         <activity
             android:name=".SingleGame.SingleGameActivity"
             android:label="@string/title_activity_single_play_game"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"
-            />
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity.MainActivity"/>
+
+           </activity>
 
         <activity
             android:name=".MultiPlayGame.MultiPlayGameActivity"
             android:label="@string/title_activity_multi_play_game"
             android:theme="@style/AppTheme.NoActionBar">
-
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity.MainActivity"/>
         </activity>
 
 

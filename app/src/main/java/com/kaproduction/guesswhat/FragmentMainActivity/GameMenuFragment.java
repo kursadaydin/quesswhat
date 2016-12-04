@@ -28,6 +28,7 @@ import java.net.URL;
 
 public class GameMenuFragment extends Fragment implements View.OnClickListener {
     String mGreeting = "Hello...";
+    String imagePath = null;
     View v;
     boolean mShowSignIn = true;
     ImageView imageViewUserIcon;
@@ -52,10 +53,7 @@ public class GameMenuFragment extends Fragment implements View.OnClickListener {
     }
 
     public void setIconUser(String path){
-        if (imageViewUserIcon ==null)  return;
-        Picasso.with(getActivity().getApplicationContext()).load(path)
-                .transform(new CircleTransform())
-                .into(imageViewUserIcon);
+        imagePath = path;
         updateScreen(v);
     }
     public void setGreeting(String greeting) {
@@ -67,12 +65,6 @@ public class GameMenuFragment extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.fragment_gamemenu, container, false);
-        updateScreen(v);
-        return v;
-    }
-
-    private void updateScreen(View v) {
-        if (getActivity() == null) return;
         imageButtonLogin = (ImageButton) v.findViewById(R.id.imageButtonLogin);
         imageButtonLogin.setOnClickListener(this);
         imageButtonLogout = (ImageButton) v.findViewById(R.id.imageButtonLogout);
@@ -88,9 +80,25 @@ public class GameMenuFragment extends Fragment implements View.OnClickListener {
         buttonMultiplaygame = (Button) v.findViewById(R.id.buttonMultiplaygame);
         buttonMultiplaygame.setOnClickListener(this);
 
-
         textViewUsername = (TextView) v.findViewById(R.id.textViewUsername);
+        return v;
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        updateScreen(v);
+    }
+
+    private void updateScreen(View v) {
+        if (getActivity() == null) return;
+
         if (textViewUsername != null) textViewUsername.setText(mGreeting);
+        if (imageViewUserIcon !=null) {
+            Picasso.with(getActivity().getApplicationContext()).load(imagePath)
+                    .transform(new CircleTransform())
+                    .into(imageViewUserIcon);
+        }
         imageButtonLogin.setVisibility(mShowSignIn ?
                 View.VISIBLE : View.GONE);
         imageButtonLogout.setVisibility(mShowSignIn ?

@@ -1,5 +1,6 @@
 package com.kaproduction.guesswhat.SingleGame;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
@@ -124,7 +125,8 @@ public class SingleGameFragment extends Fragment implements View.OnClickListener
 
     public interface Listener {
 
-        public void onSinglePlayScore(float score, int count);
+         void onSinglePlayScore(float score, int count);
+         void onSinglePlayFailed(int target);
 
     }
     Listener mListener = null;
@@ -167,17 +169,19 @@ public class SingleGameFragment extends Fragment implements View.OnClickListener
         return v;
     }
 
+
     @Override
     public void onStart() {
         super.onStart();
+        emptyAll();
         updateUI();
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        updateUI();
-       // emptyAll();
+       // updateUI();
+
     }
 
     @Override
@@ -213,8 +217,9 @@ public class SingleGameFragment extends Fragment implements View.OnClickListener
                             spHeader.setTextColor(Color.RED);
                             spHeader.setTextSize(30);
                             spButtonCheckMyResult.setEnabled(false);
+                            mListener.onSinglePlayFailed(rastgeleSayi);
 
-                            showAlertDialog();
+                            //showAlertDialog();
 
                         }
                     }
@@ -426,8 +431,8 @@ public class SingleGameFragment extends Fragment implements View.OnClickListener
         builder.setSpan(new ImageSpan(getActivity(), R.drawable.ic_action_questionmark),
                 builder.length() - 1, builder.length(), 0);
         builder.append(" ");
-        spHeader.setText(builder);
-        // singleplayerHeader.setText(rastgeleSayi+"");
+        //spHeader.setText(builder);
+        spHeader.setText(rastgeleSayi+"");
 
 
         MY_EDIT_TEXT[count].setEnabled(true);
